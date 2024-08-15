@@ -1,5 +1,5 @@
 [project]
-name = "0x01code"
+name = "memkit"
 version = "0.0.1"
 license = { text = "MIT" }
 authors = [{ name = "0x01code", email = "admin@0x01code.com" }]
