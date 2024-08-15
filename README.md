@@ -1,5 +1,5 @@
 # Memkit
-Memkit is an game hacking library for Direct Memory Access (DMA) 
+Memkit is game hacking library for Direct Memory Access (DMA) 
 
 # Example
 ```python
