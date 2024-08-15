@@ -2,7 +2,7 @@
 Memkit is an game hacking library for Direct Memory Access (DMA) 
 
 # Example
-```
+```python
 from memkit import Memory
 
 mem = Memory('ac_client.exe')
