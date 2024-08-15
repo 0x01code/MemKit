@@ -1,6 +1,6 @@
 [project]
 name = "memkit"
-version = "0.0.1"
+version = "0.0.2"
 license = { text = "MIT" }
 authors = [{ name = "0x01code", email = "admin@0x01code.com" }]
 description = "Memkit is game hacking library for Direct Memory Access (DMA)"
