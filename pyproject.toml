@@ -1,9 +1,8 @@
 [project]
 name = "0x01code"
 version = "0.0.1"
-authors = [
-  { name="0x01code", email="admin@0x01code.com" },
-]
+license = { text = "MIT" }
+authors = [{ name = "0x01code", email = "admin@0x01code.com" }]
 description = "Memkit is game hacking library for Direct Memory Access (DMA)"
 readme = "README.md"
 requires-python = ">=3.8"
