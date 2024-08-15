@@ -6,11 +6,11 @@ Memkit is an game hacking library for Direct Memory Access (DMA)
 from memkit import Memory
 
 mem = Memory('ac_client.exe')
-module = mem.GetModule('ac_client.exe')
+module = mem.get_module('ac_client.exe')
 
-health_address = mem.FindChain(module.base + 0x0018AC00, [0xEC])
+health_address = mem.find_chain(module.base + 0x0018AC00, [0xEC])
 
-mem.Write(health_address, 1337)
+mem.write(health_address, 1337)
 
-health = mem.Read(health_address, 'i32')
+health = mem.read(health_address, 'i32')
 ```
