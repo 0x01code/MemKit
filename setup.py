@@ -2,11 +2,12 @@ from setuptools import setup, find_packages
 
 setup(
     name='memkit',
-    version='0.0.3',
+    version='0.0.4',
     packages=find_packages(),
     install_requires=[
         'memprocfs'
     ],
+    description='Memkit is game hacking library for Direct Memory Access (DMA) ',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     url='https://github.com/0x01code/memkit',
