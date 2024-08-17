@@ -43,3 +43,12 @@ class Memory:
             return self.process.memory.write(address, struct.pack('f', data))
         else:
             return self.process.memory.write(address, data.to_bytes(data.bit_length() + 7, 'little'))
+
+    def patch(self, dst, src):
+        self.process.memory.write(dst, src)
+
+    def nop(self, dst, size):
+        nop_array = []
+        for _ in range(size):
+            nop_array.append(b'\x90')
+        self.process.memory.write(dst, b''.join(nop_array))
