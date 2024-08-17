@@ -1,4 +1,9 @@
 # Memkit
+[![release](https://img.shields.io/github/release/0x01code/memkit.svg)](https://github.com/0x01code/MemKit/releases)
+[![version](https://img.shields.io/pypi/v/memkit.svg)](https://pypi.org/project/memkit)
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://pypi.org/project/memkit)
+
+
 Memkit is game hacking library for Direct Memory Access (DMA) 
 
 A detailed usage guide is available on [Docs](https://github.com/0x01code/MemKit/wiki) section of the Wiki.
