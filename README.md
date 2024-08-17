@@ -1,6 +1,20 @@
 # Memkit
 Memkit is game hacking library for Direct Memory Access (DMA) 
 
+# Feature
+- Get module address
+- Find chain
+- Read memory
+- Write memory
+- Patch binary
+- Nop binary
+
+# Install
+You can install memkit with pip as following:
+```
+pip install memkit
+```
+
 # Example
 ```python
 from memkit import Memory
