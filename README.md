@@ -1,6 +1,8 @@
 # Memkit
 Memkit is game hacking library for Direct Memory Access (DMA) 
 
+A detailed usage guide is available on [Docs](https://github.com/0x01code/MemKit/wiki) section of the Wiki.
+
 # Feature
 - Get module address
 - Find chain
