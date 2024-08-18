@@ -24,9 +24,9 @@ pip install memkit
 
 # Example
 ```python
-from memkit import Memory
+from memkit import memory
 
-mem = Memory('ac_client.exe')
+mem = memory('ac_client.exe')
 module = mem.get_module('ac_client.exe')
 
 health_address = mem.find_chain(module.base + 0x0018AC00, [0xEC])
