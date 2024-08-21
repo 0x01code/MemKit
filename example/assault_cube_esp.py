@@ -48,7 +48,7 @@ while True:
             position_bottom, view_matrix, windows_width, windows_height
         )
 
-        if not screen_head and not screen_bottom:
+        if not screen_head or not screen_bottom:
             continue
 
         h = screen_bottom['y'] - screen_head['y']
