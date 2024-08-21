@@ -1,5 +1,6 @@
 import memprocfs
 import struct
+from keystone import *
 
 
 class memory:
@@ -54,3 +55,35 @@ class memory:
         for _ in range(size):
             nop_array.append(b'\x90')
         self.process.memory.write(dst, b''.join(nop_array))
+
+    def alloc(self):
+        # Not yet usable, need to learn more.
+        for v in self.process.maps.vad():
+            if v['protection'] == '--rw--':
+                return v['start']
+
+    def hook(self, address, data, length):
+        '''
+        Example: mem.hook(0x400000, code = 'inc dword ptr [eax]\nlea eax, dword ptr [esp + 0x1C]', 6)
+        '''
+        if length < 5:
+            return False
+
+        self.nop(address, length)
+
+        target_address = self.alloc()
+        jump_offset = target_address - (address + 5)
+        hook_code = b'\xE9' + struct.pack('<i', jump_offset)
+        self.patch(address, hook_code)
+
+        # Convert asm code to bytes
+        ks = Ks(KS_ARCH_X86, KS_MODE_32)
+        encoding, _ = ks.asm(data)
+        hook_code = bytes.fromhex(''.join(format(x, "02x") for x in encoding))
+
+        # jump back to original address
+        jump_back_address = address + length
+        jump_offset = jump_back_address - (target_address + len(hook_code) + 5)
+        hook_code += b'\xE9' + struct.pack('<i', jump_offset)
+
+        self.patch(target_address, hook_code)

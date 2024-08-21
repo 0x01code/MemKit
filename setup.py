@@ -5,7 +5,8 @@ setup(
     version='1.0.0',
     packages=find_packages(),
     install_requires=[
-        'memprocfs'
+        'memprocfs',
+        'keystone'
     ],
     description='Memkit is game hacking library for Direct Memory Access (DMA) ',
     long_description=open('README.md').read(),
