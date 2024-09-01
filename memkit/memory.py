@@ -1,4 +1,5 @@
 import memprocfs
+import re
 import struct
 from keystone import *
 
@@ -55,6 +56,20 @@ class memory:
         for _ in range(size):
             nop_array.append(b'\x90')
         self.process.memory.write(dst, b''.join(nop_array))
+
+    def pattern_scan(self, module, pattern):
+        memory = self.process.memory.read(module.base, module.image_size)
+
+        regex_pattern = pattern.replace(' ', '').replace('??', '.')
+        regex_pattern = re.sub(r'([0-9A-Fa-f]{2})', r'\\x\1', regex_pattern)
+        regex = re.compile(regex_pattern.encode())
+
+        match = regex.search(memory)
+
+        if match:
+            return module.base + match.start()
+        else:
+            return None
 
     def alloc(self):
         # Not yet usable, need to learn more.

@@ -15,6 +15,7 @@ A detailed usage guide is available on [Docs](https://github.com/0x01code/MemKit
 - Write memory
 - Patch binary
 - Nop binary
+- Pattern scan
 
 # Install
 You can install memkit with pip as following:
